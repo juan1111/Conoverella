@@ -1,0 +1,1 @@
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="100%" src="https://embed.figma.com/design/zS8GiT1eeH1r8A1HSrD2ou/Home?node-id=0-1&m=dev&embed-host=share" allowfullscreen></iframe>
