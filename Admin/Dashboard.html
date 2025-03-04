@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span>ShopDash</span>
+                </div>
+                <button id="toggle-sidebar" class="toggle-sidebar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span>Orders</span>
+                            <span class="badge">5</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                            <span>Customers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            <span>Transactions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar">
+                    <div>
+                        <h4>John Doe</h4>
+                        <p>Store Admin</p>
+                    </div>
+                </div>
+                <button class="logout-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button id="mobile-menu" class="mobile-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search...">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="notifications">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                            <span class="badge">3</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Stats Cards -->
+                <div class="stats-cards">
+                    <div class="card">
+                        <div class="card-icon sales">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="card-info">
+                            <h3>Total Sales</h3>
+                            <p class="card-value">$24,780</p>
+                            <p class="card-change positive">+12.5% <span>from last month</span></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon orders">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </div>
+                        <div class="card-info">
+                            <h3>New Orders</h3>
+                            <p class="card-value">578</p>
+                            <p class="card-change positive">+8.2% <span>from last month</span></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon customers">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="card-info">
+                            <h3>Customers</h3>
+                            <p class="card-value">3,642</p>
+                            <p class="card-change positive">+5.7% <span>from last month</span></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon revenue">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div class="card-info">
+                            <h3>Revenue</h3>
+                            <p class="card-value">$18,925</p>
+                            <p class="card-change negative">-2.3% <span>from last month</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <div class="card chart-card">
+                        <div class="card-header">
+                            <h3>Revenue Overview</h3>
+                            <div class="card-actions">
+                                <select id="revenue-period">
+                                    <option value="weekly">Weekly</option>
+                                    <option value="monthly" selected>Monthly</option>
+                                    <option value="yearly">Yearly</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="revenue-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card chart-card">
+                        <div class="card-header">
+                            <h3>Sales by Category</h3>
+                            <div class="card-actions">
+                                <button class="refresh-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M23 4v6h-6"></path>
+                                        <path d="M1 20v-6h6"></path>
+                                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="category-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="card orders-card">
+                    <div class="card-header">
+                        <h3>Recent Orders</h3>
+                        <div class="card-actions">
+                            <button class="view-all-btn">View All</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="orders-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Product</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#ORD-0215</td>
+                                        <td>
+                                            <div class="customer-info">
+                                                <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Customer">
+                                                <span>Emma Wilson</span>
+                                            </div>
+                                        </td>
+                                        <td>Wireless Headphones</td>
+                                        <td>Aug 15, 2023</td>
+                                        <td>$159.99</td>
+                                        <td><span class="status delivered">Delivered</span></td>
+                                        <td>
+                                            <div class="actions">
+                                                <button class="action-btn">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                        <circle cx="12" cy="12" r="3"></circle>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD-0214</td>
+                                        <td>
+                                            <div class="customer-info">
+                                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer">
+                                                <span>John Doe</span>
+                                            </div>
+                                        </td>
+                                        <td>Smartphone Case</td>
+                                        <td>Aug 14, 2023</td>
+                                        <td>$24.99</td>
+                                        <td><span class="status shipped">Shipped</span></td>
+                                        <td>
+                                            <div class="actions">
+                                                <button class="action-btn">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                        <circle cx="12" cy="12" r="3"></circle>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD-0213</td>
+                                        <td>
+                                            <div class="customer-info">
+                                                <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Customer">
+                                                <span>Sarah Johnson</span>
+                                            </div>
+                                        </td>
+                                        <td>Bluetooth Speaker</td>
+                                        <td>Aug 13, 2023</td>
+                                        <td>$89.99</td>
+                                        <td><span class="status processing">Processing</span></td>
+                                        <td>
+                                            <div class="actions">
+                                                <button class="action-btn">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                        <circle cx="12" cy="12" r="3"></circle>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD-0212</td>
+                                        <td>
+                                            <div class="customer-info">
+                                                <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Customer">
+                                                <span>Michael Brown</span>
+                                            </div>
+                                        </td>
+                                        <td>Laptop Sleeve</td>
+                                        <td>Aug 12, 2023</td>
+                                        <td>$34.99</td>
+                                        <td><span class="status delivered">Delivered</span></td>
+                                        <td>
+                                            <div class="actions">
+                                                <button class="action-btn">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                        <circle cx="12" cy="12" r="3"></circle>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD-0211</td>
+                                        <td>
+                                            <div class="customer-info">
+                                                <img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Customer">
+                                                <span>Lisa Anderson</span>
+                                            </div>
+                                        </td>
+                                        <td>Smartwatch</td>
+                                        <td>Aug 11, 2023</td>
+                                        <td>$199.99</td>
+                                        <td><span class="status cancelled">Cancelled</span></td>
+                                        <td>
+                                            <div class="actions">
+                                                <button class="action-btn">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                        <circle cx="12" cy="12" r="3"></circle>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Popular Products -->
+                <div class="card products-card">
+                    <div class="card-header">
+                        <h3>Popular Products</h3>
+                        <div class="card-actions">
+                            <button class="view-all-btn">View All</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="products-grid">
+                            <div class="product-item">
+                                <div class="product-image">
+                                    <img src="https://via.placeholder.com/150" alt="Wireless Headphones">
+                                </div>
+                                <div class="product-info">
+                                    <h4>Wireless Headphones</h4>
+                                    <p class="product-category">Electronics</p>
+                                    <div class="product-stats">
+                                        <p class="product-price">$159.99</p>
+                                        <p class="product-stock">Stock: 45</p>
+                                    </div>
+                                    <div class="product-sales">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 75%"></div>
+                                        </div>
+                                        <p>75% Sold</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-image">
+                                    <img src="https://via.placeholder.com/150" alt="Smartphone Case">
+                                </div>
+                                <div class="product-info">
+                                    <h4>Smartphone Case</h4>
+                                    <p class="product-category">Accessories</p>
+                                    <div class="product-stats">
+                                        <p class="product-price">$24.99</p>
+                                        <p class="product-stock">Stock: 120</p>
+                                    </div>
+                                    <div class="product-sales">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 45%"></div>
+                                        </div>
+                                        <p>45% Sold</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-image">
+                                    <img src="https://via.placeholder.com/150" alt="Bluetooth Speaker">
+                                </div>
+                                <div class="product-info">
+                                    <h4>Bluetooth Speaker</h4>
+                                    <p class="product-category">Electronics</p>
+                                    <div class="product-stats">
+                                        <p class="product-price">$89.99</p>
+                                        <p class="product-stock">Stock: 30</p>
+                                    </div>
+                                    <div class="product-sales">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 60%"></div>
+                                        </div>
+                                        <p>60% Sold</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-image">
+                                    <img src="https://via.placeholder.com/150" alt="Smartwatch">
+                                </div>
+                                <div class="product-info">
+                                    <h4>Smartwatch</h4>
+                                    <p class="product-category">Wearables</p>
+                                    <div class="product-stats">
+                                        <p class="product-price">$199.99</p>
+                                        <p class="product-stock">Stock: 15</p>
+                                    </div>
+                                    <div class="product-sales">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 85%"></div>
+                                        </div>
+                                        <p>85% Sold</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Checkout</title>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=AT8v-dpDLziIEaKUWQBlo3pINXDyuyABidt6WcHnlkIpzPVTabRThWMFQsB0DXcWnDm4mtONngBaU30f"></script>
+
+</head>
+<body>
+
+
+    <div id="paypal-button-container"></div>
+
+    <script>
+        paypal.Buttons({
+
+            createOrder: (data,actions)=>{
+
+                return actions.order.create({
+
+                    purchase_units: [{
+                        amount: {
+                            value: '200'
+                        }
+                    }]
+                })
+            },
+
+            onApprove: (data,actions)=>{
+
+                console.log('data' + data);
+                console.log('Action' + actions);
+
+                return actions.order.capture().then((details)=>{
+                    console.log(details.payer.name.given_name);
+                })
+            }
+
+        }).render('#paypal-button-container')
+    </script>
+
+</body>
+</html>

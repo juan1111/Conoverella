@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - CHIC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1573855619003-97b4799dcd8b?q=80&w=2070');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+    
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: #dc3545;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .team-member-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    
+    .timeline {
+      position: relative;
+      padding-left: 50px;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: #dee2e6;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    
+    .timeline-dot {
+      position: absolute;
+      left: -50px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #212529;
+      border: 4px solid white;
+      z-index: 1;
+    }
+    
+    .newsletter-section {
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3" href="shop.html">Conoverella</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="shop.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Shop
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="women.html">Women</a></li>
+              <li><a class="dropdown-item" href="men.html">Men</a></li>
+              <li><a class="dropdown-item" href="accessories.html">Accessories</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="new-arrivals.html">New Arrivals</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <form class="d-flex me-3">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search products...">
+            <button class="btn btn-outline-dark" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+        <div class="d-flex align-items-center">
+          <div class="position-relative me-3">
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+              <i class="bi bi-cart fs-5"></i>
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+          </div>
+          <a href="#" class="me-3">
+            <i class="bi bi-heart fs-5"></i>
+          </a>
+          <a href="#" class="me-3">
+            <i class="bi bi-person fs-5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold mb-4">Our Story</h1>
+      <p class="lead mb-4">Discover the passion behind CHIC Fashion</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070" alt="About CHIC" class="img-fluid rounded">
+        </div>
+        <div class="col-lg-6">
+          <h2 class="mb-4">About CHIC Fashion</h2>
+          <p class="lead">We're more than just a fashion brand - we're a lifestyle.</p>
+          <p>Founded in 2010, CHIC has grown from a small boutique to a global fashion destination. Our mission is to provide high-quality, stylish clothing and accessories that empower individuals to express their unique personality through fashion.</p>
+          <p>We believe that fashion should be accessible to everyone, which is why we offer a diverse range of styles at competitive prices without compromising on quality. Our team of talented designers works tirelessly to create collections that reflect the latest trends while maintaining a timeless appeal.</p>
+          <p>At CHIC, sustainability is at the heart of everything we do. We're committed to ethical manufacturing practices and are continuously working to reduce our environmental footprint.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Our Values</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <div class="mb-3">
+                <i class="bi bi-stars text-dark" style="font-size: 2.5rem;"></i>
+              </div>
+              <h4 class="card-title">Quality</h4>
+              <p class="card-text">We never compromise on quality. Each piece in our collection undergoes rigorous quality checks to ensure it meets our high standards.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <div class="mb-3">
+                <i class="bi bi-globe text-dark" style="font-size: 2.5rem;"></i>
+              </div>
+              <h4 class="card-title">Sustainability</h4>
+              <p class="card-text">We're committed to reducing our environmental impact through sustainable sourcing, ethical manufacturing, and eco-friendly packaging.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <div class="mb-3">
+                <i class="bi bi-people text-dark" style="font-size: 2.5rem;"></i>
+              </div>
+              <h4 class="card-title">Inclusivity</h4>
+              <p class="card-text">We celebrate diversity and design our collections to cater to people of all shapes, sizes, and backgrounds. Fashion is for everyone.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Journey -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Our Journey</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">2010: The Beginning</h5>
+              <p class="card-text">CHIC was founded as a small boutique in New York City with a vision to create affordable yet stylish fashion.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">2013: Expansion</h5>
+              <p class="card-text">We opened our first flagship store and launched our online platform to reach customers worldwide.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">2016: Sustainability Initiative</h5>
+              <p class="card-text">We launched our sustainability initiative, committing to ethical manufacturing and eco-friendly practices.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">2019: Global Presence</h5>
+              <p class="card-text">CHIC expanded to international markets with stores in major fashion capitals around the world.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">2022: Innovation</h5>
+              <p class="card-text">We introduced innovative shopping experiences combining digital technology with in-store retail.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">2025: The Future</h5>
+              <p class="card-text">We continue to grow and innovate, staying true to our mission of making fashion accessible to all.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Meet Our Team</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-body">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961" alt="Team Member" class="team-member-img mb-3">
+              <h5 class="card-title">Emma Johnson</h5>
+              <p class="text-muted">Founder & CEO</p>
+              <p class="card-text">Emma's vision and passion for fashion led to the creation of CHIC. She oversees all aspects of the business.</p>
+              <div class="mt-3">
+                <a href="#" class="text-dark me-2"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="text-dark me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-body">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974" alt="Team Member" class="team-member-img mb-3">
+              <h5 class="card-title">David Chen</h5>
+              <p class="text-muted">Creative Director</p>
+              <p class="card-text">David leads our design team, bringing innovative and trendsetting ideas to each collection.</p>
+              <div class="mt-3">
+                <a href="#" class="text-dark me-2"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="text-dark me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-body">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976" alt="Team Member" class="team-member-img mb-3">
+              <h5 class="card-title">Sophia Martinez</h5>
+              <p class="text-muted">Head of Marketing</p>
+              <p class="card-text">Sophia develops our marketing strategies, ensuring CHIC remains at the forefront of fashion.</p>
+              <div class="mt-3">
+                <a href="#" class="text-dark me-2"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="text-dark me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-body">
+              <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?q=80&w=1974" alt="Team Member" class="team-member-img mb-3">
+              <h5 class="card-title">James Wilson</h5>
+              <p class="text-muted">Sustainability Officer</p>
+              <p class="card-text">James ensures our commitment to sustainability is implemented across all operations.</p>
+              <div class="mt-3">
+                <a href="#" class="text-dark me-2"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="text-dark me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <h3>Subscribe to Our Newsletter</h3>
+          <p class="text-muted mb-4">Get the latest updates on new products and upcoming sales</p>
+          <form class="d-flex">
+            <input type="email" class="form-control me-2" placeholder="Your email address">
+            <button class="btn btn-dark px-4">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">CHIC</h5>
+          <p>Your premier destination for fashion and style. We bring you the latest trends from around the world.</p>
+          <div class="mt-4">
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-5"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-pinterest fs-5"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Shop</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="women.html" class="text-white text-decoration-none">Women's Clothing</a></li>
+            <li class="mb-2"><a href="men.html" class="text-white text-decoration-none">Men's Clothing</a></li>
+            <li class="mb-2"><a href="accessories.html" class="text-white text-decoration-none">Accessories</a></li>
+            <li class="mb-2"><a href="new-arrivals.html" class="text-white text-decoration-none">New Arrivals</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Sale</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Help</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Customer Service</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">My Account</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Find a Store</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Legal & Privacy</a></li>
+            <li><a href="contact.html" class="text-white text-decoration-none">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Contact</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>123 Fashion St, New York, NY</li>
+            <li class="mb-2"><i class="bi bi-telephone me-2"></i>(123) 456-7890</li>
+            <li class="mb-2"><i class="bi bi-envelope me-2"></i>info@chicfashion.com</li>
+            <li><i class="bi bi-clock me-2"></i>Mon-Fri: 9AM - 8PM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center p-3 mt-4" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2025 CHIC Fashion. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Offcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Your Shopping Cart</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="cartItems">
+        <!-- Cart items will be added here -->
+        <div class="text-center py-5" id="emptyCartMessage">
+          <i class="bi bi-cart-x fs-1 text-muted"></i>
+          <p class="mt-3">Your cart is empty</p>
+          <button class="btn btn-dark mt-3" data-bs-dismiss="offcanvas">Continue Shopping</button>
+        </div>
+      </div>
+      <div class="mt-auto" id="cartFooter" style="display: none;">
+        <div class="d-flex justify-content-between mb-3">
+          <span class="fw-bold">Subtotal:</span>
+          <span class="fw-bold" id="cartSubtotal">$0.00</span>
+        </div>
+        <button class="btn btn-dark w-100 mb-2">Checkout</button>
+        <button class="btn btn-outline-dark w-100" id="clearCartBtn">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Cart functionality
+    let cart = [];
+    const cartCount = document.getElementById('cartCount');
+    const cartItems = document.getElementById('cartItems');
+    const emptyCartMessage = document.getElementById('emptyCartMessage');
+    const cartFooter = document.getElementById('cartFooter');
+    const cartSubtotal = document.getElementById('cartSubtotal');
+    const clearCartBtn = document.getElementById('clearCartBtn');
+
+    // Update cart display
+    function updateCart() {
+      // Update cart count
+      const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+      cartCount.textContent = totalItems;
+      
+      // Update cart items
+      if (cart.length === 0) {
+        emptyCartMessage.style.display = 'block';
+        cartFooter.style.display = 'none';
+        cartItems.innerHTML = emptyCartMessage.outerHTML;
+      } else {
+        emptyCartMessage.style.display = 'none';
+        cartFooter.style.display = 'block';
+        
+        let cartHTML = '';
+        let subtotal = 0;
+        
+        cart.forEach(item => {
+          const itemTotal = item.price * item.quantity;
+          subtotal += itemTotal;
+          
+          cartHTML += `
+            <div class="d-flex align-items-center mb-3">
+              <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover;" class="me-3">
+              <div class="flex-grow-1">
+                <h6 class="mb-0">${item.name}</h6>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">${item.quantity} × $${item.price.toFixed(2)}</small>
+                  <button class="btn btn-sm text-danger remove-item-btn" data-id="${item.id}">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        
+        cartItems.innerHTML = cartHTML;
+        cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+        
+        // Add event listeners to remove buttons
+        document.querySelectorAll('.remove-item-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const productId = parseInt(this.getAttribute('data-id'));
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+          });
+        });
+      }
+    }
+
+    // Clear cart
+    clearCartBtn.addEventListener('click', function() {
+      cart = [];
+      updateCart();
+    });
+
+    // Initialize the cart
+    updateCart();
+
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your message. We will get back to you soon!');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

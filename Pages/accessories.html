@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessories - CHIC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1556306535-0f09a537f0a3?q=80&w=2070');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+    
+    .product-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .category-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+    }
+    
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: #dc3545;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .filter-btn.active {
+      background-color: #212529;
+      color: white;
+    }
+    
+    .newsletter-section {
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3" href="shop.html">Conoverella</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="shop.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+              Shop
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="women.html">Women</a></li>
+              <li><a class="dropdown-item" href="men.html">Men</a></li>
+              <li><a class="dropdown-item active" href="accessories.html">Accessories</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="new-arrivals.html">New Arrivals</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <form class="d-flex me-3">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search products...">
+            <button class="btn btn-outline-dark" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+        <div class="d-flex align-items-center">
+          <div class="position-relative me-3">
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+              <i class="bi bi-cart fs-5"></i>
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+          </div>
+          <a href="#" class="me-3">
+            <i class="bi bi-heart fs-5"></i>
+          </a>
+          <a href="#" class="me-3">
+            <i class="bi bi-person fs-5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold mb-4">Accessories Collection</h1>
+      <p class="lead mb-4">Complete your look with our stylish accessories</p>
+    </div>
+  </section>
+
+  <!-- Filters and Sorting -->
+  <section class="py-4 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="d-flex flex-wrap">
+            <button class="btn btn-outline-dark me-2 mb-2 filter-btn active" data-filter="all">All</button>
+            <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="bags">Bags</button>
+            <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="jewelry">Jewelry</button>
+            <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="watches">Watches</button>
+            <button class="btn btn-outline-dark mb-2 filter-btn" data-filter="hats">Hats</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex justify-content-md-end mt-3 mt-md-0">
+            <select class="form-select me-2" style="width: auto;">
+              <option>Sort by: Featured</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Newest</option>
+              <option>Best Selling</option>
+            </select>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-dark">
+                <i class="bi bi-grid-3x3-gap-fill"></i>
+              </button>
+              <button type="button" class="btn btn-outline-dark">
+                <i class="bi bi-list"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4" id="accessoriesProductsGrid">
+        <!-- Accessories products will be dynamically added here -->
+      </div>
+      
+      <!-- Pagination -->
+      <nav class="mt-5">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <h3>Subscribe to Our Newsletter</h3>
+          <p class="text-muted mb-4">Get the latest updates on new products and upcoming sales</p>
+          <form class="d-flex">
+            <input type="email" class="form-control me-2" placeholder="Your email address">
+            <button class="btn btn-dark px-4">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">CHIC</h5>
+          <p>Your premier destination for fashion and style. We bring you the latest trends from around the world.</p>
+          <div class="mt-4">
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-5"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-pinterest fs-5"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Shop</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="women.html" class="text-white text-decoration-none">Women's Clothing</a></li>
+            <li class="mb-2"><a href="men.html" class="text-white text-decoration-none">Men's Clothing</a></li>
+            <li class="mb-2"><a href="accessories.html" class="text-white text-decoration-none">Accessories</a></li>
+            <li class="mb-2"><a href="new-arrivals.html" class="text-white text-decoration-none">New Arrivals</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Sale</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Help</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Customer Service</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">My Account</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Find a Store</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Legal & Privacy</a></li>
+            <li><a href="contact.html" class="text-white text-decoration-none">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Contact</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>123 Fashion St, New York, NY</li>
+            <li class="mb-2"><i class="bi bi-telephone me-2"></i>(123) 456-7890</li>
+            <li class="mb-2"><i class="bi bi-envelope me-2"></i>info@chicfashion.com</li>
+            <li><i class="bi bi-clock me-2"></i>Mon-Fri: 9AM - 8PM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center p-3 mt-4" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2025 CHIC Fashion. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Offcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Your Shopping Cart</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="cartItems">
+        <!-- Cart items will be added here -->
+        <div class="text-center py-5" id="emptyCartMessage">
+          <i class="bi bi-cart-x fs-1 text-muted"></i>
+          <p class="mt-3">Your cart is empty</p>
+          <button class="btn btn-dark mt-3" data-bs-dismiss="offcanvas">Continue Shopping</button>
+        </div>
+      </div>
+      <div class="mt-auto" id="cartFooter" style="display: none;">
+        <div class="d-flex justify-content-between mb-3">
+          <span class="fw-bold">Subtotal:</span>
+          <span class="fw-bold" id="cartSubtotal">$0.00</span>
+        </div>
+        <a href="checkout.html" class="btn btn-dark w-100 mb-2">Checkout</a>
+        <button class="btn btn-outline-dark w-100" id="clearCartBtn">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Accessories Product data
+    const accessoriesProducts = [
+      {
+        id: 301,
+        name: "Leather Crossbody Bag",
+        price: 59.99,
+        image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=2076",
+        category: "bags",
+        description: "A stylish leather crossbody bag with multiple compartments. Perfect for everyday use with adjustable straps and secure closures."
+      },
+      {
+        id: 302,
+        name: "Minimalist Watch",
+        price: 89.99,
+        image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1976",
+        category: "watches",
+        description: "A sleek minimalist watch with a leather strap. Features a clean dial design and reliable quartz movement."
+      },
+      {
+        id: 303,
+        name: "Statement Necklace",
+        price: 45.99,
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1974",
+        category: "jewelry",
+        description: "A bold statement necklace that elevates any outfit. Features quality materials with an eye-catching design."
+      },
+      {
+        id: 304,
+        name: "Wide Brim Fedora",
+        price: 38.99,
+        image: "https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?q=80&w=1974",
+        category: "hats",
+        description: "A stylish wide brim fedora that adds sophistication to any look. Made from quality materials with a comfortable fit."
+      },
+      {
+        id: 305,
+        name: "Leather Tote Bag",
+        price: 79.99,
+        image: "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?q=80&w=1957",
+        category: "bags",
+        description: "A spacious leather tote bag perfect for work or travel. Features durable construction with multiple interior pockets."
+      },
+      {
+        id: 306,
+        name: "Gold Hoop Earrings",
+        price: 29.99,
+        image: "https://images.unsplash.com/photo-1630020085330-9a05a55441ca?q=80&w=1974",
+        category: "jewelry",
+        description: "Classic gold hoop earrings that complement any outfit. Made from quality materials with a secure closure."
+      },
+      {
+        id: 307,
+        name: "Chronograph Watch",
+        price: 149.99,
+        image: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=1994",
+        category: "watches",
+        description: "A sophisticated chronograph watch with multiple functions. Features a stainless steel case and premium movement."
+      },
+      {
+        id: 308,
+        name: "Straw Sun Hat",
+        price: 34.99,
+        image: "https://images.unsplash.com/photo-1529245856630-f4853233d2ea?q=80&w=1974",
+        category: "hats",
+        description: "A stylish straw sun hat perfect for beach days. Provides excellent sun protection with a comfortable fit."
+      }
+    ];
+
+    // Cart functionality
+    let cart = [];
+    const cartCount = document.getElementById('cartCount');
+    const cartItems = document.getElementById('cartItems');
+    const emptyCartMessage = document.getElementById('emptyCartMessage');
+    const cartFooter = document.getElementById('cartFooter');
+    const cartSubtotal = document.getElementById('cartSubtotal');
+    const clearCartBtn = document.getElementById('clearCartBtn');
+
+    // Display accessories products
+    function displayAccessoriesProducts(category = 'all') {
+      const productsGrid = document.getElementById('accessoriesProductsGrid');
+      productsGrid.innerHTML = '';
+      
+      const filteredProducts = category === 'all' 
+        ? accessoriesProducts 
+        : accessoriesProducts.filter(product => product.category === category);
+      
+      filteredProducts.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'col-md-6 col-lg-3';
+        productCard.innerHTML = `
+          <div class="card product-card h-100">
+            <span class="badge bg-dark category-badge">${product.category}</span>
+            <img src="${product.image}" class="card-img-top" alt="${product.name}" style="height: 250px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${product.name}</h5>
+              <p class="card-text text-muted mb-0">$${product.price.toFixed(2)}</p>
+              <div class="d-flex mt-auto pt-3">
+                <button class="btn btn-outline-dark flex-grow-1 me-2 quick-view-btn" data-id="${product.id}">Quick View</button>
+                <button class="btn btn-dark flex-grow-1 add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        `;
+        productsGrid.appendChild(productCard);
+      });
+      
+      // Add event listeners to the newly created buttons
+      document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const productId = parseInt(this.getAttribute('data-id'));
+          const product = accessoriesProducts.find(p => p.id === productId);
+          
+          if (product) {
+            // Check if product is already in cart
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+              existingItem.quantity += 1;
+            } else {
+              cart.push({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                quantity: 1
+              });
+            }
+            
+            updateCart();
+            
+            // Show a toast or some feedback
+            alert(`${product.name} added to cart!`);
+          }
+        });
+      });
+    }
+
+    // Filter products
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Remove active class from all buttons
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        this.classList.add('active');
+        // Display products based on filter
+        displayAccessoriesProducts(this.getAttribute('data-filter'));
+      });
+    });
+
+    // Update cart display
+    function updateCart() {
+      // Update cart count
+      const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+      cartCount.textContent = totalItems;
+      
+      // Update cart items
+      if (cart.length === 0) {
+        emptyCartMessage.style.display = 'block';
+        cartFooter.style.display = 'none';
+        cartItems.innerHTML = emptyCartMessage.outerHTML;
+      } else {
+        emptyCartMessage.style.display = 'none';
+        cartFooter.style.display = 'block';
+        
+        let cartHTML = '';
+        let subtotal = 0;
+        
+        cart.forEach(item => {
+          const itemTotal = item.price * item.quantity;
+          subtotal += itemTotal;
+          
+          cartHTML += `
+            <div class="d-flex align-items-center mb-3">
+              <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover;" class="me-3">
+              <div class="flex-grow-1">
+                <h6 class="mb-0">${item.name}</h6>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">${item.quantity} × $${item.price.toFixed(2)}</small>
+                  <button class="btn btn-sm text-danger remove-item-btn" data-id="${item.id}">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        
+        cartItems.innerHTML = cartHTML;
+        cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+        
+        // Add event listeners to remove buttons
+        document.querySelectorAll('.remove-item-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const productId = parseInt(this.getAttribute('data-id'));
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+          });
+        });
+      }
+    }
+
+    // Clear cart
+    clearCartBtn.addEventListener('click', function() {
+      cart = [];
+      updateCart();
+    });
+
+    // Initialize the page
+    displayAccessoriesProducts();
+    updateCart();
+  </script>
+</body>
+</html>
