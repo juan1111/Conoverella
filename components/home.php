@@ -59,9 +59,9 @@
       <!-- Filter Buttons -->
       <div class="d-flex justify-content-center mb-4 flex-wrap">
         <button class="btn btn-outline-dark me-2 mb-2 filter-btn active" data-filter="all">All</button>
-        <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="women">Women</button>
-        <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="men">Men</button>
-        <button class="btn btn-outline-dark mb-2 filter-btn" data-filter="accessories">Accessories</button>
+        <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="Women">Women</button>
+        <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="Men">Men</button>
+        <button class="btn btn-outline-dark mb-2 filter-btn" data-filter="Accessories">Accessories</button>
       </div>
       
       <!-- Products Grid -->
