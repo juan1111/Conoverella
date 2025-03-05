@@ -4,8 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conoverella</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="assets/css/home.css">
+  <script src="../js/script_featured.js"></script>
 </head>
 <body>
+
+<?php include __DIR__ . '/../views/header.php'; ?>
 
    <!-- Hero Section -->
    <section class="hero-section">
@@ -59,9 +66,9 @@
       <!-- Filter Buttons -->
       <div class="d-flex justify-content-center mb-4 flex-wrap">
         <button class="btn btn-outline-dark me-2 mb-2 filter-btn active" data-filter="all">All</button>
-        <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="Women">Women</button>
-        <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="Men">Men</button>
-        <button class="btn btn-outline-dark mb-2 filter-btn" data-filter="Accessories">Accessories</button>
+        <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="women">Women</button>
+        <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="men">Men</button>
+        <button class="btn btn-outline-dark mb-2 filter-btn" data-filter="accessories">Accessories</button>
       </div>
       
       <!-- Products Grid -->
@@ -140,6 +147,8 @@
       </div>
     </div>
   </div>
+
+  <?php include __DIR__ . '/../views/footer.php'; ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/script.js"></script>

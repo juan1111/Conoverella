@@ -50,6 +50,3 @@
       © 2025 Conoverella Fashion. All Rights Reserved.
     </div>
   </footer>
-
-  </body>
-  </html>
