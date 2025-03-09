@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout</title>
+  <title>Checkout josephsss</title>
   <script src="https://www.paypal.com/sdk/js?client-id=AT8v-dpDLziIEaKUWQBlo3pINXDyuyABidt6WcHnlkIpzPVTabRThWMFQsB0DXcWnDm4mtONngBaU30f"></script>
 </head>
 <body>
