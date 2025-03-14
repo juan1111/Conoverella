@@ -29,9 +29,7 @@ $(document).ready(()=>{
                 ? products 
                 : products.filter(product => product.category === category);
                 // console.log(filteredProducts);
-
                 isPages = 'home';
-
                 filteredProductss = filteredProducts;
             }
 

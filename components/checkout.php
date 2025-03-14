@@ -4,9 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout joseph</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="assets/css/home.css">
   <script src="https://www.paypal.com/sdk/js?client-id=AT8v-dpDLziIEaKUWQBlo3pINXDyuyABidt6WcHnlkIpzPVTabRThWMFQsB0DXcWnDm4mtONngBaU30f"></script>
+  <script src="../js/script_checkout.js"></script>
 </head>
 <body>
+
+<?php include __DIR__ . '/../views/header.php'; ?>
 
 <section class="py-5">
     <div class="container">
@@ -72,6 +79,7 @@
             </div> -->
 
             <div id="paypal-button-container" class="mt-4"></div>
+            
           </form>
         </div>
         <div class="col-md-4">
@@ -105,12 +113,12 @@
       </div>
     </div>
   </section>
+  
+  <?php include __DIR__ . '/../views/footer.php'; ?>
 
-  <?php include __DIR__ .'/../views/modal/sidebar.php'; ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/checkout.js"></script>
-  <script src="assets/js/script.js">
+  <!-- <script src="assets/js/script.js"></script> -->
 
   </script>
 </body>
