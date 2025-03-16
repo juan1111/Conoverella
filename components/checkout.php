@@ -59,24 +59,6 @@
             </div>
 
             <h3 class="my-4">Payment</h3>
-            <!-- <div class="row g-3">
-              <div class="col-md-6">
-                <label for="cardName" class="form-label">Name on Card</label>
-                <input type="text" class="form-control" id="cardName" required>
-              </div>
-              <div class="col-md-6">
-                <label for="cardNumber" class="form-label">Card Number</label>
-                <input type="text" class="form-control" id="cardNumber" required>
-              </div>
-              <div class="col-md-4">
-                <label for="expiration" class="form-label">Expiration</label>
-                <input type="text" class="form-control" id="expiration" placeholder="MM/YY" required>
-              </div>
-              <div class="col-md-2">
-                <label for="cvv" class="form-label">CVV</label>
-                <input type="text" class="form-control" id="cvv" required>
-              </div>
-            </div> -->
 
             <div id="paypal-button-container" class="mt-4"></div>
             

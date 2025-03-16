@@ -14,11 +14,12 @@ $(document).ready(() =>{
       const totalElement = document.getElementById('total');
       let totalPrice;
 
+
     function updateOrderSummary() {
     
         let subtotal = 0;
         let orderSummaryHTML = '';
-    
+
         cart.forEach(item => {
           const itemTotal = item.price * item.quantity;
           subtotal += itemTotal;
@@ -54,7 +55,7 @@ $(document).ready(() =>{
                 // Update cart count
                 const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
                 cartCount.textContent = totalItems;
-                
+
                 // Update cart items
                 if (cart.length === 0) {
                   emptyCartMessage.style.display = 'block';
@@ -142,20 +143,23 @@ $(document).ready(() =>{
                 },
 
                 createOrder: (data,actions) =>{
-                    
+
                   return actions.order.create({
-              
+
                     purchase_units:[{
                       amount:{
-                        value: totalPrice
+                        value: totalPrice,
+                        currency_code: "USD",
+                        breakdown:{
+                          item_total: {value: totalPrice, currency_code: "USD"}
+                        }
                       }
                     }]
                   })
-              
                 },
               
                 onApprove: (data,actions) =>{
-              
+
                   return actions.order.capture().then((details)=>{
                     let formdata = {
                       firstname: $('#firstName').val(),
@@ -175,7 +179,8 @@ $(document).ready(() =>{
                         orderID: data.orderID,
                         payerID: data.payerID,
                         paymentDetails: JSON.stringify(details),
-                        billingDetails: JSON.stringify(formdata)
+                        billingDetails: JSON.stringify(formdata),
+                        orderDetails: JSON.stringify(cart)
                       },
               
                       success: (response)=>{

@@ -14,7 +14,7 @@
               Shop
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="women.html">Women</a></li>
+              <li><a class="dropdown-item" href="index.php?page=women">Women</a></li>
               <li><a class="dropdown-item" href="index.php?page=men">Men</a></li>
               <li><a class="dropdown-item" href="accessories.html">Accessories</a></li>
               <li><hr class="dropdown-divider"></li>

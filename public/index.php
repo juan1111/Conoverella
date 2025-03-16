@@ -9,7 +9,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 $_SESSION['pages'] = $page;
 
 // Sanitize input to prevent unwanted paths
-$allowed_pages = ['home', 'about', 'contact','men','checkout'];
+$allowed_pages = ['home', 'about', 'contact','men','checkout','women'];
 if (!in_array($page, $allowed_pages)) {
     $page = 'home'; // Default page if invalid
 }

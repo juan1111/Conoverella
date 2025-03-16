@@ -11,11 +11,12 @@ $(document).ready(()=>{
           success: (response) =>{
             products = response;
             console.log(products[0].category);
+            console.log(response);
 
             let filteredProductss;
             let isPages;
 
-            if(products[0].category === 'men'){
+            if(products[0].category === 'men' || product[0].category === "women"){
 
                 const filteredProducts = category === 'all' 
                 ? products 

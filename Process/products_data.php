@@ -29,6 +29,8 @@ try {
 
             $queryWomen = "SELECT * FROM products where category = :category";
             $stmtWomen = $pdo->prepare($queryWomen);
+            $stmtWomen->bindParam(':category', $pages);
+            $stmtWomen->execute();
     
             $womenProducts = $stmtWomen->fetchAll(PDO::FETCH_ASSOC);
     

@@ -10,6 +10,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     $payerID = $_POST['payerID'] ?? null;
     $paymentDetails = json_decode($_POST['paymentDetails'], true);
     $billingDetails = json_decode($_POST['billingDetails'], true);
+    $orderDetails = json_decode($_POST['orderDetails'], true);
 
     if(!$orderID || !$payerID || !$paymentDetails){
         echo json_encode(["status" => "error", "message" => "Invalid payment Data"]);
@@ -45,10 +46,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         $stmt->bindParam(':paytime', $paymentTime);
 
         if($stmt->execute()){
-            echo json_encode(["status" => "success"]);
 
             //Insert for billing Details Table
-
             $queryBilling = 'insert into billing_details (order_id,payer_id,firstname,lastname,email,address,city,state,zip,amount,currency,status,billing_time)
             values (:orderid,:payerid,:fname,:lname,:email,:address,:city,:state,:zip,:amount,:currency,:status,:billtime)';
             $stmtBilling = $pdo->prepare($queryBilling);
@@ -66,6 +65,20 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             $stmtBilling->bindParam(':status',$status);
             $stmtBilling->bindParam(':billtime',$paymentTime);
             $stmtBilling->execute();
+
+            foreach($orderDetails as $orders){
+
+                $productItems = isset($orders['name']) ? $orders['name'] : null;
+                $productPrice = isset($orders['price']) ? $orders['price'] : null;
+
+                $queryOrders = $pdo->prepare('Insert into orders (order_id,item,price) values (:orderid,:items,:price)');
+                $queryOrders->bindParam(':orderid', $orderID);
+                $queryOrders->bindParam(':items', $productItems);
+                $queryOrders->bindParam(':price', $productPrice);
+                $queryOrders->execute();
+            }
+
+            echo json_encode(["status" => "success"]);
         }
         else{
             echo json_encode(["status" => "error", "message" => "Database Error!"]);
