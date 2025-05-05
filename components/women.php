@@ -1,159 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Women's Fashion - Conoverella</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="assets/css/home.css">
-  <script src="../js/script_featured.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conoveralla</title>
+    <link rel="stylesheet" href="assets/css/Home.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/shop.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&family=Tienne:wght@400;700;900&family=Tilt+Prism&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+    <script src="../js/script_featured.js"></script>
 </head>
 <body>
-  <!-- Navigation -->
-  <?php include __DIR__ . '/../views/header.php'; ?>
+  <nav>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container text-center">
-      <h1 class="display-4 fw-bold mb-4">Women's Collection</h1>
-      <p class="lead mb-4">Discover the latest trends in women's fashion</p>
-    </div>
-  </section>
+  <?php include __DIR__ . '/../views/modal/sidebar.php'; ?>
 
-  <!-- Filters and Sorting -->
-  <section class="py-4 bg-light">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <div class="d-flex flex-wrap">
-            <button class="btn btn-outline-dark me-2 mb-2 filter-btn active" data-filter="all">All</button>
-            <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="dresses">Dresses</button>
-            <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="tops">Tops</button>
-            <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="bottoms">Bottoms</button>
-            <button class="btn btn-outline-dark mb-2 filter-btn" data-filter="outerwear">Outerwear</button>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="d-flex justify-content-md-end mt-3 mt-md-0">
-            <select class="form-select me-2" style="width: auto;">
-              <option>Sort by: Featured</option>
-              <option>Price: Low to High</option>
-              <option>Price: High to Low</option>
-              <option>Newest</option>
-              <option>Best Selling</option>
-            </select>
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-outline-dark">
-                <i class="bi bi-grid-3x3-gap-fill"></i>
-              </button>
-              <button type="button" class="btn btn-outline-dark">
-                <i class="bi bi-list"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products Section -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row g-4" id="productsGrid">
-        <!-- Women's products will be dynamically added here -->
-      </div>
-      
-      <!-- Pagination -->
-      <nav class="mt-5">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-          </li>
-          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section class="newsletter-section py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
-          <h3>Subscribe to Our Newsletter</h3>
-          <p class="text-muted mb-4">Get the latest updates on new products and upcoming sales</p>
-          <form class="d-flex">
-            <input type="email" class="form-control me-2" placeholder="Your email address">
-            <button class="btn btn-dark px-4">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalProductTitle">Product Title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-6">
-              <img src="/placeholder.svg" class="img-fluid" id="modalProductImage" alt="Product Image">
-            </div>
-            <div class="col-md-6">
-              <h3 id="modalProductPrice">$0.00</h3>
-              <div class="mb-3">
-                <span class="text-warning me-1"><i class="bi bi-star-fill"></i></span>
-                <span class="text-warning me-1"><i class="bi bi-star-fill"></i></span>
-                <span class="text-warning me-1"><i class="bi bi-star-fill"></i></span>
-                <span class="text-warning me-1"><i class="bi bi-star-fill"></i></span>
-                <span class="text-warning me-1"><i class="bi bi-star-half"></i></span>
-                <span class="text-muted">(24 reviews)</span>
-              </div>
-              <p id="modalProductDescription">Product description goes here.</p>
-              <div class="mb-3">
-                <label class="form-label">Size</label>
-                <select class="form-select">
-                  <option>Select Size</option>
-                  <option>S</option>
-                  <option>M</option>
-                  <option>L</option>
-                  <option>XL</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Quantity</label>
-                <div class="input-group" style="width: 130px;">
-                  <button class="btn btn-outline-secondary" type="button" id="decreaseQuantity">-</button>
-                  <input type="text" class="form-control text-center" value="1" id="productQuantity">
-                  <button class="btn btn-outline-secondary" type="button" id="increaseQuantity">+</button>
+    <div id="cart">
+        <div class="cart-container">
+            <button onclick="closeSidebar('cart')" class="close-btn">&times;</button>
+            <h1>Shopping Cart</h1> 
+            <div class="select-container">
+                <div class="select-all-wrapper">
+                    <input type="checkbox" name="select-all">
+                    <label for="select-all">SELECT ALL ITEMS<span class="items-num">()</span></label>
                 </div>
-              </div>
-              <button class="btn btn-dark w-100" id="addToCartModalBtn">Add to Cart</button>
+                <div class="delete-wrapper">
+                    <img src="assets/images/cart-pics/trash.png" alt="trashbin-icon">
+                    <button class="delete-btn"><p>DELETE</button>
+                </div>
             </div>
-          </div>
+            <div class="cart-product">
+                <div class="product-selector">
+                    <input type="checkbox">
+                    <img src="assets/images/slide-pics/menswear 1.png" alt="product-pic">
+                </div>
+                <div class="cart-product-card">
+                    <p class="product-name">Thiago-Warch for Men - Cool Black</p>
+                    <p>c2
+                    </p>
+                    <p class="product-price">$ 5,000</p>
+                </div>
+                <div class="cart-btn">
+                    <div class="product-manage">
+                        <button><img src="assets/images/cart-pics/like.png" alt="heart"></button>
+                        <button><img src="assets/images/cart-pics/gift.png" alt="gift"></button>
+                        <button><img src="assets/images/cart-pics/trash.png" alt="trashbin"></button>
+                    </div>
+        
+                    <div class="quantity-container">
+                        <button class="minus">-</button>
+                        <p>1</p>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-product">
+                <div class="product-selector">
+                    <input type="checkbox">
+                    <img src="assets/images/slide-pics/menswear 1.png" alt="product-pic">
+                </div>
+                <div class="cart-product-card">
+                    <p class="product-name">Thiago-Warch for Men - Cool Black</p>
+                    <p>c2
+                    </p>
+                    <p class="product-price">$ 5,000</p>
+                </div>
+                <div class="cart-btn">
+                    <div class="product-manage">
+                        <button><img src="assets/images/cart-pics/like.png" alt="heart"></button>
+                        <button><img src="assets/images/cart-pics/gift.png" alt="gift"></button>
+                        <button><img src="assets/images/cart-pics/trash.png" alt="trashbin"></button>
+                    </div>
+        
+                    <div class="quantity-container">
+                        <button class="minus">-</button>
+                        <p>1</p>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-product">
+                <div class="product-selector">
+                    <input type="checkbox">
+                    <img src="assets/images/slide-pics/menswear 1.png" alt="product-pic">
+                </div>
+                <div class="cart-product-card">
+                    <p class="product-name">Thiago-Warch for Men - Cool Black</p>
+                    <p>c2
+                    </p>
+                    <p class="product-price">$ 5,000</p>
+                </div>
+                <div class="cart-btn">
+                    <div class="product-manage">
+                        <button><img src="assets/images/cart-pics/like.png" alt="heart"></button>
+                        <button><img src="assets/images/cart-pics/gift.png" alt="gift"></button>
+                        <button><img src="assets/images/cart-pics/trash.png" alt="trashbin"></button>
+                    </div>
+        
+                    <div class="quantity-container">
+                        <button class="minus">-</button>
+                        <p>1</p>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+    <div id="searchbar">
+        <button>&#709;</button>
+        <h1>Looking for something? Let's find it together</h1>
+        <input type="text">
+    </div>
+    <div class="header">
+        <div class="left-section">
+            <div class="left-entity">
+                <button onclick="openSidebar('hamburg')"><img src="assets/images/header-pics/hamburger (2).png"></button>
+            </div>
+            <div class="left-entity">
+                <button onclick="openSidebar('cart')"><img src="assets/images/header-pics/shopping-cart.png"></button>
+            </div>
+            <div class="left-entity">
+                <button><img src="assets/images/header-pics/delivery.png"></button>
+            </div>
+            <div class="left-entity">
+                <button><img src="assets/images/header-pics/user.png"></button>
+            </div>
+        </div>
+        <div class="middle-section">
+            <p class="middle-section-title">CONOVERELLA</p>
+            <p class="middle-section-line">━━━━━━━━━━━━━</p>
+            <p class="middle-section-text">become the better version of yourself</p>
+        </div>
+        <div class="right-section">
+            <div class="search">
+                <input onclick="" type="text" placeholder="What are you looking for?">
+                <button onclick="" class="search-button">
+                    <img src="assets/images/header-pics/search.png">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="shop-title">
+        <h1>Women's Dress</h1>
+    </div>
+    <div class="nav-wrapper">
+        <div class="filter-container">
+            <div class="filter-title">
+                <img src="assets/images/header-pics/filter (1).png">
+                <p>Filter:</p>
+            </div>
+            <div class="nav-dropdown-btn">
+                <p>Availability</p>
+                <img src="assets/images/header-pics/down-arrow (3).png">
+            </div>
+            <div class="nav-dropdown-btn">
+                <p>Price</p>
+                <img src="assets/images/header-pics/down-arrow (3).png">
+            </div>
+        </div>
+        <div class="sort-container">
+            <div>
+                <p>Sort by:</p>
+            </div>
+            <div class="nav-dropdown-btn">
+                <p>Alphabetically</p>
+                <img src="assets/images/header-pics/down-arrow (3).png">
+            </div>
+        </div>
+    </div>
+</nav>
 
-  <!-- Footer -->
+<!--  Product Container -->
 
-  <?php include __DIR__ . '/../views/footer.php'; ?>
+<div class="container">
+        <div class="product-grid" id="product-grid">
+            <!-- Product 1 -->
+        </div>
+</div>
+    
+<?php include __DIR__ . '/../views/footer.php'; ?>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/script.js"></script>
-
+<script src="assets/js/header.js"></script>
 </body>
 </html>

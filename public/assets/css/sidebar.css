@@ -1,0 +1,98 @@
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.sidebar-close-button{
+    position: absolute;
+    left: 0;
+    height: 30px;
+    font-size: 40px;
+    background-color: white;
+    border: none;
+}
+.sidebar-header h1{
+    position: relative;
+    top: 0px;
+}
+.sidebar-profile-pic{
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.sidebar-profile-pic img{
+    height: 50px;
+    
+}
+.sidebar-id-wrapper,.sidebar-email-wrapper,.sidebar-contact-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 25px;
+}
+.sidebar-contact-wrapper p, .sidebar-email-wrapper p{
+    font-size: 12px;
+}
+.sidebar-id-wrapper button,.sidebar-email-wrapper button,.sidebar-contact-wrapper button{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    height: 25px;
+}
+.sidebar-id-wrapper img,.sidebar-email-wrapper img,.sidebar-contact-wrapper img{
+    height: 15px;
+}
+.sidebar-delivery-wrapper,.sidebar-nav-wrapper{
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+}
+.sidebar-cart,.sidebar-delivery{
+    display: block;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    
+}
+.sidebar-cart img,.sidebar-delivery img{
+    height: 20px;
+}
+.sidebar-nav-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+.sidebar-nav h3{
+    padding: 0;
+    margin: 5px 0;
+}
+.sidebar-dropdown-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+}
+.sidebar-dropdown-btn img{
+    height: 20px;
+}
+.sidebar-dropdown-content-men{
+    flex-direction: column;
+    align-items:first baseline;
+    gap: 0;
+    padding-left: 25px;
+    display: none;
+}   
+.sidebar-dropdown-content-men li,.sidebar-dropdown-content-men a{
+    margin: 0;
+    padding: 0;
+}
+.dropdown-arrow {
+    transition: transform 0.3s ease;
+}

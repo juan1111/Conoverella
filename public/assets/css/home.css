@@ -1,50 +1,250 @@
-.hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070');
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0; 
+}
+
+.section-background {
+    background-image: url('../images/hero-images.jpg');
     background-size: cover;
     background-position: center;
-    height: 500px;
-    display: flex;
-    align-items: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
     color: white;
-  }
-  
-  .product-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .category-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 10;
-  }
-  
-  .cart-count {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: #dc3545;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    font-size: 12px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-  }
-  
-  .filter-btn.active {
-    background-color: #212529;
+    align-items: center;
+    padding-bottom: 250px;
+}
+
+.section-1-welcome, .section-1-title {
+    font-size: 75px;
+}
+
+.section-1-welcome {
+    font-family: "The Nautigal", cursive;
+    margin-bottom: -50px;
+}
+
+.section-1-title {
+    font-family: "Tilt Prism", sans-serif;
+    margin-bottom: 0;
+}
+
+.section-1-description {
+    font-family: "Tienne", serif;
+    font-size: 13px;
+    width: 500px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.margin {
+    height: 100px;
+    width: 100%;
+}
+
+.shop-now {
+    display: inline-block;
+    background-color: black;
     color: white;
-  }
-  
-  .newsletter-section {
-    background-color: #f8f9fa;
-  }
+    border: none;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s ease-in-out;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.shop-now:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.shop-now:active {
+    opacity: 0.6;
+    transform: scale(0.98);
+}
+
+/* Policies Section */
+.shipping-policies {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Tinmama", sans-serif;
+    padding: 20px;
+    flex-wrap: wrap;
+    border-bottom:5px solid gray;
+}
+
+.shipping-policy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    word-spacing: 3px;
+    width: 400px;
+    text-align: left;
+}
+.shipping-policy img{
+    height: 50px;
+}
+
+.policy-title {
+    font-weight: bold;
+}
+
+.policy-description {
+    font-size: 12px;
+    width: 225px;
+    margin-top: -10px;
+    line-height: 1.4;
+}
+
+.policy img {
+    height: 50px;
+}
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    background-color: black;
+}
+
+/* Slides Wrapper (flex for horizontal slide movement) */
+.slides-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Each Slide */
+.slide {
+    display: flex;
+    width: 100%;
+    flex: 0 0 100%;
+    height: 600px; /* adjust height */
+    gap: 10px;
+}
+
+/* Left Column with two stacked images */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+}
+
+.left-column img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+/* Right Column with big image */
+.right-column {
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.right-column img {
+    width: 100%;
+    height: 101%;
+    object-fit: cover;
+}
+
+/* Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translateY(-50%);
+    z-index: 10;
+    user-select: none;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots Navigation */
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .slide {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+    }
+
+    .left-column {
+        flex-direction: row;
+    }
+
+    .left-column img {
+        height: auto;
+    }
+
+    .right-column img {
+        height: auto;
+    }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-1-welcome, .section-1-title {
+        font-size: 50px;
+    }
+
+    .section-1-description {
+        width: 90%;
+        font-size: 12px;
+    }
+
+    .shop-now {
+        width: 150px;
+        height: 35px;
+        font-size: 12px;
+    }
+    .shipping-policies{
+        flex-direction: column;
+    }
+}

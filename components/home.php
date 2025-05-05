@@ -1,157 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conoverella</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="assets/css/home.css">
-  <script src="../js/script_featured.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conoveralla</title>
+    <link rel="stylesheet" href="assets/css/Home.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&family=Tienne:wght@400;700;900&family=Tilt+Prism&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
+    <nav>
+    <?php include __DIR__ . '/../views/modal/sidebar.php'; ?>
 
-<?php include __DIR__ . '/../views/header.php'; ?>
-
-   <!-- Hero Section -->
-   <section class="hero-section">
-    <div class="container text-center">
-      <h1 class="display-3 fw-bold mb-4">Summer Collection 2025</h1>
-      <p class="lead mb-4">Discover the latest trends in fashion</p>
-      <a href="#products" class="btn btn-light btn-lg px-5">Shop Now</a>
-    </div>
-  </section>
-
-  <!-- Featured Categories -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card bg-dark text-white overflow-hidden" style="height: 200px;">
-            <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?q=80&w=1935" class="card-img opacity-75" alt="Women's Fashion" style="object-fit: cover; height: 100%;">
-            <div class="card-img-overlay d-flex flex-column justify-content-center text-center">
-              <h3 class="card-title fw-bold">Women</h3>
-              <a href="#" class="text-white">Shop Collection</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card bg-dark text-white overflow-hidden" style="height: 200px;">
-            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=1974" class="card-img opacity-75" alt="Men's Fashion" style="object-fit: cover; height: 100%;">
-            <div class="card-img-overlay d-flex flex-column justify-content-center text-center">
-              <h3 class="card-title fw-bold">Men</h3>
-              <a href="#" class="text-white">Shop Collection</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card bg-dark text-white overflow-hidden" style="height: 200px;">
-            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1935" class="card-img opacity-75" alt="Accessories" style="object-fit: cover; height: 100%;">
-            <div class="card-img-overlay d-flex flex-column justify-content-center text-center">
-              <h3 class="card-title fw-bold">Accessories</h3>
-              <a href="#" class="text-white">Shop Collection</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products Section -->
-  <section id="products" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-5">Featured Products</h2>
-      
-      <!-- Filter Buttons -->
-      <div class="d-flex justify-content-center mb-4 flex-wrap">
-        <button class="btn btn-outline-dark me-2 mb-2 filter-btn active" data-filter="all">All</button>
-        <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="women">Women</button>
-        <button class="btn btn-outline-dark me-2 mb-2 filter-btn" data-filter="men">Men</button>
-        <button class="btn btn-outline-dark mb-2 filter-btn" data-filter="accessories">Accessories</button>
-      </div>
-      
-      <!-- Products Grid -->
-      <div class="row g-4" id="productsGrid">
-        <!-- Products will be dynamically added here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section class="newsletter-section py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
-          <h3>Subscribe to Our Newsletter</h3>
-          <p class="text-muted mb-4">Get the latest updates on new products and upcoming sales</p>
-          <form class="d-flex">
-            <input type="email" class="form-control me-2" placeholder="Your email address">
-            <button class="btn btn-dark px-4">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Shopping Cart Offcanvas -->
-
-
-  <!-- Quick View Modal -->
-  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalProductTitle">Product Title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-6">
-              <img src="/placeholder.svg" class="img-fluid" id="modalProductImage" alt="Product Image">
-            </div>
-            <div class="col-md-6">
-              <h3 id="modalProductPrice">$0.00</h3>
-              <div class="mb-3">
-                <span class="text-warning me-1"><i class="bi bi-star-fill"></i></span>
-                <span class="text-warning me-1"><i class="bi bi-star-fill"></i></span>
-                <span class="text-warning me-1"><i class="bi bi-star-fill"></i></span>
-                <span class="text-warning me-1"><i class="bi bi-star-fill"></i></span>
-                <span class="text-warning me-1"><i class="bi bi-star-half"></i></span>
-                <span class="text-muted">(24 reviews)</span>
-              </div>
-              <p id="modalProductDescription">Product description goes here.</p>
-              <div class="mb-3">
-                <label class="form-label">Size</label>
-                <select class="form-select">
-                  <option>Select Size</option>
-                  <option>S</option>
-                  <option>M</option>
-                  <option>L</option>
-                  <option>XL</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Quantity</label>
-                <div class="input-group" style="width: 130px;">
-                  <button class="btn btn-outline-secondary" type="button" id="decreaseQuantity">-</button>
-                  <input type="text" class="form-control text-center" value="1" id="productQuantity">
-                  <button class="btn btn-outline-secondary" type="button" id="increaseQuantity">+</button>
+        <div id="cart">
+            <div class="cart-container">
+                <button onclick="closeSidebar('cart')" class="close-btn">&times;</button>
+                <h1>Shopping Cart</h1> 
+                <div class="select-container">
+                    <div class="select-all-wrapper">
+                        <input type="checkbox" name="select-all">
+                        <label for="select-all">SELECT ALL ITEMS<span class="items-num">()</span></label>
+                    </div>
+                    <div class="delete-wrapper">
+                        <img src="assets/images/cart-pics/trash.png" alt="trashbin-icon">
+                        <button class="delete-btn"><p>DELETE</button>
+                    </div>
                 </div>
-              </div>
-              <button class="btn btn-dark w-100" id="addToCartModalBtn">Add to Cart</button>
+                <div class="cart-product">
+                    <div class="product-selector">
+                        <input type="checkbox">
+                        <img src="assets/images/slide-pics/menswear 1.png" alt="product-pic">
+                    </div>
+                    <div class="product-card">
+                        <p class="product-name">Thiago-Warch for Men - Cool Black</p>
+                        <p>c2
+                        </p>
+                        <p class="product-price">$ 5,000</p>
+                    </div>
+                    <div class="cart-btn">
+                        <div class="product-manage">
+                            <button><img src="assets/images/cart-pics/like.png" alt="heart"></button>
+                            <button><img src="assets/images/cart-pics/gift.png" alt="gift"></button>
+                            <button><img src="assets/images/cart-pics/trash.png" alt="trashbin"></button>
+                        </div>
+            
+                        <div class="quantity-container">
+                            <button class="minus">-</button>
+                            <p>1</p>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-product">
+                    <div class="product-selector">
+                        <input type="checkbox">
+                        <img src="assets/images/slide-pics/menswear 1.png" alt="product-pic">
+                    </div>
+                    <div class="product-card">
+                        <p class="product-name">Thiago-Warch for Men - Cool Black</p>
+                        <p>c2
+                        </p>
+                        <p class="product-price">$ 5,000</p>
+                    </div>
+                    <div class="cart-btn">
+                        <div class="product-manage">
+                            <button><img src="assets/images/cart-pics/like.png" alt="heart"></button>
+                            <button><img src="assets/images/cart-pics/gift.png" alt="gift"></button>
+                            <button><img src="assets/images/cart-pics/trash.png" alt="trashbin"></button>
+                        </div>
+            
+                        <div class="quantity-container">
+                            <button class="minus">-</button>
+                            <p>1</p>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-product">
+                    <div class="product-selector">
+                        <input type="checkbox">
+                        <img src="assets/images/slide-pics/menswear 1.png" alt="product-pic">
+                    </div>
+                    <div class="product-card">
+                        <p class="product-name">Thiago-Warch for Men - Cool Black</p>
+                        <p>c2
+                        </p>
+                        <p class="product-price">$ 5,000</p>
+                    </div>
+                    <div class="cart-btn">
+                        <div class="product-manage">
+                            <button><img src="assets/images/cart-pics/like.png" alt="heart"></button>
+                            <button><img src="assets/images/cart-pics/gift.png" alt="gift"></button>
+                            <button><img src="assets/images/cart-pics/trash.png" alt="trashbin"></button>
+                        </div>
+            
+                        <div class="quantity-container">
+                            <button class="minus">-</button>
+                            <p>1</p>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
+        <div id="searchbar">
+            <button>&#709;</button>
+            <h1>Looking for something? Let's find it together</h1>
+            <input type="text">
+        </div>
+        <div class="header">
+            <div class="left-section">
+                <div class="left-entity">
+                    <button onclick="openSidebar('hamburg')"><img src="assets/images/header-pics/hamburger (2).png"></button>
+                </div>
+                <div class="left-entity">
+                    <button onclick="openSidebar('cart')"><img src="assets/images/header-pics/shopping-cart.png"></button>
+                </div>
+                <div class="left-entity">
+                    <button><img src="assets/images/header-pics/delivery.png"></button>
+                </div>
+                <div class="left-entity">
+                    <button><img src="assets/images/header-pics/user.png"></button>
+                </div>
+            </div>
+            <div class="middle-section">
+                <p class="middle-section-title">CONOVERELLA</p>
+                <p class="middle-section-line">━━━━━━━━━━━━━</p>
+                <p class="middle-section-text">become the better version of yourself</p>
+            </div>
+            <div class="right-section">
+                <div class="search">
+                    <input onclick="" type="text" placeholder="What are you looking for?">
+                    <button onclick="" class="search-button">
+                        <img src="assets/images/header-pics/search.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="nav-bar">
+            <ul>
+                <li><a class="active" href="#home">HOME</a></li>
+                <li><a href="index.php?page=women">MEN</a></li>
+                <li><a href="#home">WOMEN</a></li>
+                <li><a href="#home">NEW ARRIVALS</a></li>
+                <li><a href="#home">NEW COLLECTIONS</a></li>
+                <li><a href="#home">SALE</a></li>
+                <li><a href="#home">CONTACT US</a></li>
+                <li><a href="#home">ABOUT US</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="section-background">
+                <h1 class="section-1-welcome">Welcome to</h1>
+                <h1 class="section-1-title">CONOVERELLA</h1>
+                <div class="section-1-description">
+                    <p class="description-part-1">Discover a world of luxury fashion at your fingertips. At Conoverella, we bring you premium, stylish, and effortlessly chic clothing designed for those who want to dress fast and shine instantly. Whether you're looking for timeless elegance or modern sophistication, we have the perfect pieces to elevate your wardrobe.
+                    </p>
+                    <p class="description-part-2">Shop now and become the best version of yourself!</p>
+                </div>
+                <button class="shop-now">SHOP NOW!</button>
+            </div>
+            <div class="shipping-policies"> 
+                <div class="shipping-policy">
+                    <img src="assets/images/header-pics/delivery.png">
+                    <div class="policy-text">
+                        <h2 class="policy-title">FREE SHIPPING</h2>
+                        <p class="policy-description">FREE SHIPPING TO ALL PH ORDER OR ORDER ABOVE $150</p>
+                    </div>
+                </div>
+                <div class="shipping-policy">
+                    <img src="assets/images/home-pics/return.png">
+                    <div class="policy-text">
+                        <h2 class="policy-title">30 DAYS RETURN</h2>
+                        <p class="policy-description">SIMPLY RETURN IT WITHIN 30 DAYS FOR AN EXCHANGE</p>
+                    </div>
+                </div>
+                <div class="shipping-policy" id="policy-payment-secure">
+                    <img src="assets/images/home-pics/padlock.png">
+                    <div class="policy-text">
+                        <h2 class="policy-title">100% PAYMENT SECURITY</h2>
+                        <p class="policy-description">We guarantee safe transactions, secure checkout, and fraud protection, giving you peace of mind while you shop.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slideshow-container">
+                <div class="slides-wrapper">
+        
+                    <!-- Slide 1 -->
+                    <div class="slide">
+                        <div class="left-column">
+                            <img src="assets/images/slide-pics/women shoe 1.png" alt="Left Top 1">
+                            <img src="assets/images/slide-pics/sunglasses women.jpg" alt="Left Bottom 1">
+                        </div>
+                        <div class="right-column">
+                            <img src="assets/images/slide-pics/menswear 1.png" alt="Right 1">
+                        </div>
+                    </div>
+        
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <div class="left-column">
+                            <img src="assets/images/slide-pics/men watch 1.png" alt="Left Top 2">
+                            <img src="assets/images/slide-pics/men shoe.jpg" alt="Left Bottom 2">
+                        </div>
+                        <div class="right-column">
+                            <img src="assets/images/slide-pics/men suit.jpg" alt="Right 2">
+                        </div>
+                    </div>
+        
+                    <!-- Slide 3 -->
+                    <div class="slide">
+                        <div class="left-column">
+                            <img src="assets/images/slide-pics/perfume.jpg" alt="Left Top 3">
+                            <img src="../image3b.jpg" alt="Left Bottom 3">
+                        </div>
+                        <div class="right-column">
+                            <img src="assets/images/slide-pics/ring.jpg" alt="Right 3">
+                        </div>
+                    </div>
+        
+                </div>
+        
+                <!-- Navigation Arrows -->
+                <div class="prev" onclick="moveSlide(-1)">&#10094;</div>
+                <div class="next" onclick="moveSlide(1)">&#10095;</div>
+        
+                <!-- Dots -->
+                <div class="dots-container">
+                    <span class="dot" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                </div>
+            </div>
+    </main>
 
-  <?php include __DIR__ . '/../views/footer.php'; ?>
+    <?php include __DIR__ . '/../views/footer.php'; ?>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/script.js"></script>
-  
 </body>
+
+<script src="assets/js/header.js"></script>
+<script>
+    let slideIndex = 0;
+
+    function showSlides(index) {
+    const slidesWrapper = document.querySelector('.slides-wrapper');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    if (index >= totalSlides) slideIndex = 0;
+    if (index < 0) slideIndex = totalSlides - 1;
+
+    slidesWrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[slideIndex].classList.add('active');
+}
+
+function moveSlide(step) {
+    slideIndex += step;
+    showSlides(slideIndex);
+}
+
+function currentSlide(index) {
+    slideIndex = index;
+    showSlides(slideIndex);
+}
+
+// Auto-slide every 5 seconds
+setInterval(() => moveSlide(1), 5000);
+
+// Initialize the slideshow
+showSlides(slideIndex);
+
+
+    </script>
 </html>

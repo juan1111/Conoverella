@@ -1,0 +1,175 @@
+/* Reset some default spacing */
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "jersey 15",sans-serif ;
+}
+
+/* MAIN CONTAINER */
+.about-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ABOUT WRAPPER */
+.about-wrapper {
+    background-image: url('../pic/slide pics/sunglasses women.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.about-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 0;
+}
+
+.about-wrapper h1,
+.about-wrapper p {
+    position: relative;
+    z-index: 1;
+}
+
+.about-wrapper h1 {
+    font-size: 55px;
+    margin: 0 0 20px 0;
+}
+
+.about-wrapper p {
+    width: 500px;
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+/* PROMISE VISION WRAPPER */
+.promise-vision-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.promise-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch; /* fixes the white space issue */
+    width: 100%;
+    height: auto;
+}
+
+.promise-vision-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.promise-vision img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+#promise-vision-1 {
+    background-color: rgb(128,216,191);
+}
+
+#promise-vision-2 {
+    background-color: rgba(228,127,127,255);
+}
+
+#promise-vision-3 {
+    background-color: rgba(255,189,238,255);
+}
+
+.promise-vision p {
+    width: 550px;
+    font-size: 22px;
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+/* JOIN WRAPPER */
+.join-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(212, 198, 172);
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.join-wrapper h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.join-wrapper button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    
+    width: 200px;
+    height: 40px;
+    
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1px;
+    
+    transition: 0.15s transform, 0.15s background-color;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.join-wrapper button:hover {
+    transform: scale(1.1);
+    background-color: #333;
+}
+
+.join-wrapper p {
+    color: gray;
+    margin: 5px 0;
+    
+    cursor: pointer;
+    transition: 0.15s transform, 0.15s color;
+}
+.join-wrapper p:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .about-wrapper h1 {
+        font-size: 40px;
+    }
+
+    .about-wrapper p,
+    .promise-vision p {
+        width: 90%;
+        font-size: 18px;
+    }
+
+    .promise-vision img {
+        height: auto;
+        width: 100%;
+    }
+}
