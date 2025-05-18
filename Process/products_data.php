@@ -13,62 +13,72 @@ $pages = $_SESSION['pages'] ? $_SESSION['pages'] : 'home';
 try {
     // Use prepared statements for security
 
-    switch($pages){
 
-        case 'home':
-
-            $queryFeatured = "SELECT * FROM products";
-            $stmtFeatured = $pdo->query($queryFeatured);
+        $queryproducts = "SELECT * FROM products where category = :category or types = :types";
+        $stmt = $pdo->prepare($queryproducts);
+        $stmt->bindParam(':category', $pages);
+        $stmt->bindParam(':types', $pages);
+        $stmt->execute();
     
-            $featuredProducts = $stmtFeatured->fetchAll(PDO::FETCH_ASSOC);
+        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-            echo json_encode($featuredProducts, JSON_NUMERIC_CHECK);
+        echo json_encode($products, JSON_NUMERIC_CHECK);
 
-            break;
-        case 'women':
 
-            $queryWomen = "SELECT * FROM products where category = :category";
-            $stmtWomen = $pdo->prepare($queryWomen);
-            $stmtWomen->bindParam(':category', $pages);
-            $stmtWomen->execute();
+    // switch($pages){
+
+    //     case 'home':
+
+    //         $queryFeatured = "SELECT * FROM products";
+    //         $stmtFeatured = $pdo->query($queryFeatured);
     
-            $womenProducts = $stmtWomen->fetchAll(PDO::FETCH_ASSOC);
+    //         $featuredProducts = $stmtFeatured->fetchAll(PDO::FETCH_ASSOC);
     
-            echo json_encode($womenProducts, JSON_NUMERIC_CHECK);
+    //         echo json_encode($featuredProducts, JSON_NUMERIC_CHECK);
 
-            break;
-        case 'men':
+    //         break;
+    //     case 'women':
 
-            $queryMen = "SELECT * FROM products where category = :category";
-            $stmtMen = $pdo->prepare($queryMen);
-            $stmtMen->bindParam(':category', $pages);
-            $stmtMen->execute();
+    //         $queryWomen = "SELECT * FROM products where category = :category";
+    //         $stmtWomen = $pdo->prepare($queryWomen);
+    //         $stmtWomen->bindParam(':category', $pages);
+    //         $stmtWomen->execute();
+    
+    //         $womenProducts = $stmtWomen->fetchAll(PDO::FETCH_ASSOC);
+    
+    //         echo json_encode($womenProducts, JSON_NUMERIC_CHECK);
 
-            $menProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
+    //         break;
+    //     case 'men':
 
-            echo json_encode($menProducts, JSON_NUMERIC_CHECK);
+    //         $queryMen = "SELECT * FROM products where category = :category";
+    //         $stmtMen = $pdo->prepare($queryMen);
+    //         $stmtMen->bindParam(':category', $pages);
+    //         $stmtMen->execute();
 
-            break;
+    //         $menProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 
-        case 'accessories':
+    //         echo json_encode($menProducts, JSON_NUMERIC_CHECK);
 
-            $queryAccessories = "SELECT * FROM products where category = :category";
-            $stmtAccessories = $pdo->prepare($queryAccessories);
-            $stmtAccessories->bindParam(':category', $pages);
-            $stmtAccessories->execute();
+    //         break;
 
-            $accessoriesProducts = $stmtAccessories->fetchAll(PDO::FETCH_ASSOC);
+    //     case 'accessories':
 
-            echo json_encode($stmtAccessories, JSON_NUMERIC_CHECK);
+    //         $queryAccessories = "SELECT * FROM products where category = :category";
+    //         $stmtAccessories = $pdo->prepare($queryAccessories);
+    //         $stmtAccessories->bindParam(':category', $pages);
+    //         $stmtAccessories->execute();
 
-            break;
+    //         $accessoriesProducts = $stmtAccessories->fetchAll(PDO::FETCH_ASSOC);
 
-        default:
-        echo json_encode(["Error" => "No Product Found"]);
+    //         echo json_encode($accessoriesProducts, JSON_NUMERIC_CHECK);
 
+    //         break;
 
+    //     default:
+    //     echo json_encode(["Error" => "No Product Found"]);
 
-    }
+    // }
 
     // if($pages === 'home'){
 

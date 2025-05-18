@@ -14,25 +14,6 @@
       // Filter products
 
       // Quick view functionality
-      function handleQuickView() {
-        const productId = parseInt(this.getAttribute('data-id'));
-        const product = products.find(p => p.id === productId);
-        console.log(product.name);
-        if (product) {
-          document.getElementById('modalProductTitle').textContent = product.name;
-          document.getElementById('modalProductPrice').textContent = `$${parseFloat(product.price).toFixed(2)}`;
-          document.getElementById('modalProductImage').src = product.image;
-          document.getElementById('modalProductDescription').textContent = product.description;
-          document.getElementById('productQuantity').value = 1;
-          
-          // Set the product ID on the Add to Cart button
-          document.getElementById('addToCartModalBtn').setAttribute('data-id', productId);
-          
-          // Show the modal
-          const quickViewModal = new bootstrap.Modal(document.getElementById('quickViewModal'));
-          quickViewModal.show();
-        }
-      }
   
       // Add to cart functionality
       function handleAddToCart() {
@@ -42,30 +23,8 @@
       }
   
       // Add product to cart from modal
-      document.getElementById('addToCartModalBtn').addEventListener('click', function() {
-        const productId = parseInt(this.getAttribute('data-id'));
-        const quantity = parseInt(document.getElementById('productQuantity').value);
-        addProductToCart(productId, quantity);
-        
-        // Close the modal
-        const quickViewModal = bootstrap.Modal.getInstance(document.getElementById('quickViewModal'));
-        quickViewModal.hide();
-      });
   
       // Quantity controls in modal
-      document.getElementById('decreaseQuantity').addEventListener('click', function() {
-        const quantityInput = document.getElementById('productQuantity');
-        let quantity = parseInt(quantityInput.value);
-        if (quantity > 1) {
-          quantityInput.value = quantity - 1;
-        }
-      });
-  
-      document.getElementById('increaseQuantity').addEventListener('click', function() {
-        const quantityInput = document.getElementById('productQuantity');
-        let quantity = parseInt(quantityInput.value);
-        quantityInput.value = quantity + 1;
-      });
   
       // Add product to cart
       function addProductToCart(productId, quantity) {
@@ -122,18 +81,22 @@
             subtotal += itemTotal;
             
             cartHTML += `
-              <div class="d-flex align-items-center mb-3">
-                <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover;" class="me-3">
-                <div class="flex-grow-1">
-                  <h6 class="mb-0">${item.name}</h6>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <small class="text-muted">${item.quantity} × $${item.price.toFixed(2)}</small>
-                    <button class="btn btn-sm text-danger remove-item-btn" data-id="${item.id}">
-                      <i class="bi bi-trash"></i>
-                    </button>
-                  </div>
+                <div class="cart-product">
+                    <div class="product-selector">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="product-card">
+                        <p class="product-name">${item.name}</p>
+                        <p>c2
+                        </p>
+                        <p class="product-price">${item.quantity} × $${item.price.toFixed(2)}</p>
+                    </div>
+                    <div class="cart-btn">
+                        <div class="product-manage">
+                            <button class="remove-item-btn" data-id="${item.id}"><img src="assets/images/cart-pics/trash.png" alt="trashbin"></button>
+                        </div>
+                    </div>
                 </div>
-              </div>
             `;
           });
           

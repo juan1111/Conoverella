@@ -30,7 +30,7 @@
                             <img class="dropdown-arrow" src="assets/images/sidebar-pics/next.png" alt="Arrow next">
                         </div>
                         <ul class="sidebar-dropdown-content-men">
-                            <li><a>Blazers</a></li>
+                            <li><a href="#">Blazers</a></li>
                             <li><a>Pants</a></li>
                             <li><a>Shoes</a></li>
                             <li><a>Trousers</a></li>

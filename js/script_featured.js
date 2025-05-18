@@ -10,32 +10,13 @@ $(document).ready(()=>{
     
           success: (response) =>{
             products = response;
-            console.log(products[0].category);
             console.log(response);
 
-            let filteredProductss;
-            let isPages;
+              const filteredProducts = category === 'all' 
+              ? products 
+              : products.filter(product => product.Type === category);      
 
-            if(products[0].category === "women"){
-
-                const filteredProducts = category === 'all' 
-                ? products 
-                : products.filter(product => product.Type === category);
-                console.log("Hi men");
-
-                filteredProductss = filteredProducts;
-            }
-            else{
-                const filteredProducts = category === 'all' 
-                ? products 
-                : products.filter(product => product.category === category);
-                // console.log(filteredProducts);
-                isPages = 'home';
-                filteredProductss = filteredProducts;
-                console.log("Hi men");
-            }
-
-            filteredProductss.forEach(product => {
+            filteredProducts.forEach(product => {
               const productCard = document.createElement('div');
               productCard.className = 'grid-product-card';
               productCard.innerHTML = `
@@ -54,7 +35,6 @@ $(document).ready(()=>{
                 </div>
                 <div class="card-footer">
                     <button class="add-to-cart-btn" data-id="${product.id}">ADD TO CART <i class="fas fa-shopping-cart"></i></button>
-                    <button class="favorite-btn"><i class="fas fa-heart"></i></button>
                 </div>
               `;
               productsGrid.appendChild(productCard);
@@ -67,6 +47,7 @@ $(document).ready(()=>{
         
         document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
           btn.addEventListener('click', handleAddToCart);
+          console.log("clicked");
         });
     
           }

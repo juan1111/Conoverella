@@ -1,0 +1,177 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Hero Carousel */
+.hero-carousel {
+    position: relative;
+}
+
+.carousel-item {
+    height: 820px;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+    color: white;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.welcome-text {
+    font-family: waiting for the sunrise;
+    font-size: 100px;
+    margin-bottom: 10px;
+    text-align: left;
+    align-self: flex-start;
+    padding-left: 20px;
+}
+
+.hero-logo {
+    font-family: "The Nautigal", cursive;
+    font-size: 240px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(255, 124, 222);
+    margin: 0;
+    line-height: 1;
+}
+
+.hero-description,
+.hero-description2,
+.hero-description3 {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-top: 20px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-description2 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.hero-description3 {
+    font-size: 20px;
+}
+
+/* Product Section */
+.product-showcase {
+    background-color: green;
+    background-image: linear-gradient(144deg, black 50%, rgb(151, 71, 131) 50%);
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.accessories-collection {
+    color: rgb(255, 124, 222);
+    font-size: 50px;
+    text-align: center;
+    font-family: "Jersey 15", sans-serif;
+    padding: 30px 0;
+}
+
+.items-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.item-content {
+    padding: 20px;
+}
+
+.item-picture {
+    cursor: pointer;
+    width: 100%;
+    object-fit: cover;
+}
+
+.item-name {
+    color: white;
+    font-size: 32px;
+    font-family: "Jersey 15", cursive;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.item-catalog {
+    display: inline-block;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 400px;
+    }
+
+    .welcome-text {
+        font-size: 36px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .hero-logo {
+        font-size: 60px;
+        margin: 20px auto;
+    }
+
+    .items-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item-name {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .items-row {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-description,
+    .hero-description2,
+    .hero-description3 {
+        font-size: 16px;
+    }
+
+    .welcome-text {
+        font-size: 28px;
+    }
+
+    .hero-logo {
+        font-size: 40px;
+    }
+
+    .accessories-collection {
+        font-size: 30px;
+    }
+}

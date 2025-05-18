@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/sidebar.css">
-    <link rel="stylesheet" href="assets/css/mens-collection.css">
+    <link rel="stylesheet" href="assets/css/accessories.css">
         <!-- Bootstrap CSS -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -37,48 +37,50 @@
 
     <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url(assets/images/womenscollection-pics/womenbg.png)">
+            <div class="carousel-item active" style="background-image: url(assets/images/accessories-pics/accessoriesbg.png)">
                 <div class="carousel-overlay" >
                     <div class="hero-content">
                         <h2 class="welcome-text">Welcome To</h2>
-                        <h1 class="hero-logo">Women's World</h1>
+                        <h1 class="hero-logo">World Of Accessories</h1>
                         <p class="hero-description">
-                            Ladies, welcome to a realm where elegance meets strength, and style is a reflection of grace and confidence. Women’s World is not just a place—it is a tribute to sophistication, resilience, and the timeless charm of a true lady. Here, we celebrate the art of poise, the beauty of intelligence, and the quiet strength that defines a woman of substance.
-                        </p>
-                        <p class="hero-description2">Step forward with grace, dress with purpose, and carry yourself with distinction.</p>
-                        <p class="hero-description2">Welcome to Women’s World—where every woman is a lady.</p>
+                            Where elegance meets detail, and every piece tells a story. Accessories are not just additions—they are statements of style, reflections of personality, and the finishing touch that defines sophistication. In this world, we celebrate the art of refinement, the charm of subtlety, and the power of the perfect accent.                        </p>
+                        <p class="hero-description3">
+                            Step forward with grace, dress with purpose, and let every detail speak volumes.</p>
+                        <p class="hero-description2">
+                            Welcome to the World of Accesories—where every piece completes the look.</p>
                     </div>
                 </div>
             </div>  
                     </div>
                 </div>
             </div>
+            
     <div class="product-showcase border-bottom">
-            <p class="womens-collection">Women's Collection</p>
+            <p class="accessories-collection">Accessories</p>
             <div class="items-row">
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/womenscollection-pics/womens-blouses.png">
-                    <p class="item-name">Women's Blouses →</p>
+                    <img class="item-picture" src="assets/images/accessories-pics/sunglasses.png">
+                    <p class="item-name">Sunglasses →</p>
                 </div>
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/womenscollection-pics/womens-blazers.png">
-                    <p class="item-name">Women's Blazers →</p>
+                    <img class="item-picture" src="assets/images/accessories-pics/scarfs.png">
+                    <p class="item-name">Scarfs →</p>
                 </div>
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/womenscollection-pics/womens-coats.png">
-                    <p class="item-name"> Women's Coats →</p>
+                    <img class="item-picture" src="assets/images/accessories-pics/watches.png">
+                    <p class="item-name"> Watches →</p>
                 </div>
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/womenscollection-pics/womens-shoes.png">
-                    <p class="item-name"> Women's Shoes →</p>
+                    <img class="item-picture" src="assets/images/accessories-pics/necktie.png">
+                    <p class="item-name"> Neckties →</p>
                 </div>
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/womenscollection-pics/womens-bikinis.png">
-                    <p class="item-name">Women's Bikinis →</p>
+                    <img class="item-picture" src="assets/images/accessories-pics/belts.png">
+                    <p class="item-name">Belts →</p>
                 </div>
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/womenscollection-pics/womens-skirts.png">
-                    <p class="item-name">Women's Skirts →</p>
+                    <img class="item-picture" src="assets/images/accessories-pics/headwear.png">
+                    <p class="item-name">Headwear →</p>
                 </div>
             </div>
       </div>
