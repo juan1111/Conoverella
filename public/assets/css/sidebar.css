@@ -82,14 +82,14 @@
 .sidebar-dropdown-btn img{
     height: 20px;
 }
-.sidebar-dropdown-content-men{
+.sidebar-dropdown-content{
     flex-direction: column;
     align-items:first baseline;
     gap: 0;
     padding-left: 25px;
     display: none;
 }   
-.sidebar-dropdown-content-men li,.sidebar-dropdown-content-men a{
+.sidebar-dropdown-content-men li,.sidebar-dropdown-content a{
     margin: 0;
     padding: 0;
 }

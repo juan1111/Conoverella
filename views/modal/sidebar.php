@@ -25,11 +25,11 @@
                 </div>
                 <div class="sidebar-nav-wrapper">
                     <div class="sidebar-nav">
-                        <div class="sidebar-dropdown-btn" onclick="dropDown()">
+                        <div class="sidebar-dropdown-btn" onclick="dropDown(this)">
                             <h3>Men</h3>
                             <img class="dropdown-arrow" src="assets/images/sidebar-pics/next.png" alt="Arrow next">
                         </div>
-                        <ul class="sidebar-dropdown-content-men">
+                        <ul class="sidebar-dropdown-content">
                             <li><a href="#">Blazers</a></li>
                             <li><a>Pants</a></li>
                             <li><a>Shoes</a></li>
@@ -37,16 +37,31 @@
                         </ul>
                     </div>
                     <div class="sidebar-nav">
-                        <div class="sidebar-dropdown-btn">
+                        <div class="sidebar-dropdown-btn" onclick="dropDown(this)">
                             <h3>Women</h3>
                             <img src="assets/images/sidebar-pics/next.png" alt="Arrow next">
                         </div>
+                        <ul class="sidebar-dropdown-content">
+                            <li><a href="index.php?page=women-top">Women Tops</a></li>
+                            <li><a href="index.php?page=women-set">Women Sets</a></li>
+                            <li><a href="index.php?page=women-footwear">Women Footwears</a></li>
+                            <li><a href="index.php?page=women-dress">Women Dresses</a></li>
+                            <li><a href="index.php?page=women-bottom">Women Bottoms</a></li>
+                            <li><a href="index.php?page=women-dress">Women Bikinis</a></li>
+                            <li><a href="index.php?page=women-lingerie">Women Lingeries</a></li>
+                        </ul>
                     </div>
                     <div class="sidebar-nav">
-                        <div class="sidebar-dropdown-btn">
+                        <div class="sidebar-dropdown-btn" onclick="dropDown(this)">
                             <h3>Accesories</h3>
                             <img src="assets/images/sidebar-pics/next.png" alt="Arrow next">
                         </div>
+                        <ul class="sidebar-dropdown-content">
+                            <li><a href="index.php?page=accessories">Men Bags</a></li>
+                            <li><a href="index.php?page=accessories">Men Backpack</a></li>
+                            <li><a href="index.php?page=accessories">Women Bags</a></li>
+                            <li><a href="index.php?page=accessories">Women Backpack</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="sidebar-policy">

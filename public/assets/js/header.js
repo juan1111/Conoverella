@@ -91,9 +91,11 @@ function toggleMask(a) {
     
 }
 
-function dropDown() {
-    let content = document.querySelector('.sidebar-dropdown-content-men');
-    let arrow = document.querySelector('.dropdown-arrow');
+function dropDown(element) {
+    let parent = element.parentElement;
+
+    let content = parent.querySelector('.sidebar-dropdown-content');
+    let arrow = element.querySelector('.dropdown-arrow');
 
     if (content.classList.contains('open')) {
         content.classList.remove('open');
