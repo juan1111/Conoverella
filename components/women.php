@@ -57,28 +57,33 @@
             <p class="womens-collection">Women's Collection</p>
             <div class="items-row">
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/womenscollection-pics/womens-blouses.png">
-                    <p class="item-name">Women's Blouses →</p>
+                    <a href="index.php?page=women-top"></a><img class="item-picture" src="assets/images/womenscollection-pics/womens-blazers.png">
+                    <p class="item-name">Women's Tops →</p>
                 </div>
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/womenscollection-pics/womens-blazers.png">
-                    <p class="item-name">Women's Blazers →</p>
+                    <a href="index.php?page=women-set"></a><img class="item-picture" src="assets/images/womenscollection-pics/women-set.png">
+                    <p class="item-name"> Women's Sets →</p>
                 </div>
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/womenscollection-pics/womens-coats.png">
-                    <p class="item-name"> Women's Coats →</p>
+                    <a href="index.php?page=women-footwear"></a><img class="item-picture" src="assets/images/womenscollection-pics/womens-shoes.png">
+                    <p class="item-name"> Women's Footwears →</p>
                 </div>
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/womenscollection-pics/womens-shoes.png">
-                    <p class="item-name"> Women's Shoes →</p>
+                    <a href="index.php?page=women-dress"></a>
+                    <img class="item-picture" src="assets/images/womenscollection-pics/womens-dress.png">
+                    <p class="item-name">Women's Dresses →</p>
                 </div>
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/womenscollection-pics/womens-bikinis.png">
+                    <a href="index.php?page=women-bottom"></a><img class="item-picture" src="assets/images/womenscollection-pics/womens-skirts.png">
+                    <p class="item-name">Women's Bottoms →</p>
+                </div>
+                <div class="item-content">
+                    <a href="index.php?page=women-bikini"></a><img class="item-picture" src="assets/images/womenscollection-pics/womens-bikinis.png">
                     <p class="item-name">Women's Bikinis →</p>
                 </div>
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/womenscollection-pics/womens-skirts.png">
-                    <p class="item-name">Women's Skirts →</p>
+                    <a href="index.php?page=women-lingerie"></a><img class="item-picture" src="assets/images/womenscollection-pics/womens-lingerie.png">
+                    <p class="item-name">Women's Lingeries →</p>
                 </div>
             </div>
       </div>

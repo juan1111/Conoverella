@@ -22,7 +22,7 @@
   <?php include __DIR__ . '/../views/header.php'; ?>
 
     <div class="shop-title">
-        <h1>shirt's Clothing</h1>
+        <h1>Women’s Bikinis</h1>
     </div>
     <div class="nav-wrapper">
         <div class="filter-container">
