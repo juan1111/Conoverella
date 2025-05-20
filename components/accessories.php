@@ -60,18 +60,18 @@
             <div class="items-row">
                 <div class="item-content">
                     <a href="index.php?page=accessories-menBag"></a><img class="item-picture" src="assets/images/accessories-pics/men-bag.png">
-                    <p class="item-name"> Neckties →</p>
+                    <p class="item-name"> Men's Bag →</p>
                 </div>
                 <div class="item-content">
                     <a href="index.php?page=accessories-menWatch"></a><img class="item-picture" src="assets/images/accessories-pics/men-watch.png">
-                    <p class="item-name"> Neckties →</p>
+                    <p class="item-name"> Men's Watches →</p>
                 </div>
                 <div class="item-content">
                     <a href="index.php?page=accessories-womenBag"></a><img class="item-picture" src="assets/images/accessories-pics/women-bag.png">
-                    <p class="item-name"> Neckties →</p>
+                    <p class="item-name"> Women's Bag →</p>
                     <div class="item-content">
                     <a href="index.php?page=accessories-womenWatch"></a><img class="item-picture" src="assets/images/accessories-pics/women-watch.png">
-                    <p class="item-name"> Neckties →</p>
+                    <p class="item-name"> Women's Watches →</p>
                 </div>
                 </div>
                 
