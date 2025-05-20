@@ -57,10 +57,10 @@
                             <img src="assets/images/sidebar-pics/next.png" alt="Arrow next">
                         </div>
                         <ul class="sidebar-dropdown-content">
-                            <li><a href="index.php?page=accessories">Men Bags</a></li>
-                            <li><a href="index.php?page=accessories">Men Backpack</a></li>
-                            <li><a href="index.php?page=accessories">Women Bags</a></li>
-                            <li><a href="index.php?page=accessories">Women Backpack</a></li>
+                            <li><a href="index.php?page=accessories-menBag">Men Bags</a></li>
+                            <li><a href="index.php?page=accessories-menWatch">Men Watches</a></li>
+                            <li><a href="index.php?page=accessories-womenBag">Women Bags</a></li>
+                            <li><a href="index.php?page=accessories-womenWatch">Women Wataches</a></li>
                         </ul>
                     </div>
                 </div>

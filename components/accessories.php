@@ -59,29 +59,22 @@
             <p class="accessories-collection">Accessories</p>
             <div class="items-row">
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/accessories-pics/sunglasses.png">
-                    <p class="item-name">Sunglasses →</p>
-                </div>
-                <div class="item-content">
-                    <img class="item-picture" src="assets/images/accessories-pics/scarfs.png">
-                    <p class="item-name">Scarfs →</p>
-                </div>
-                <div class="item-content">
-                    <img class="item-picture" src="assets/images/accessories-pics/watches.png">
-                    <p class="item-name"> Watches →</p>
-                </div>
-                <div class="item-content">
-                    <img class="item-picture" src="assets/images/accessories-pics/necktie.png">
+                    <a href="index.php?page=accessories-menBag"></a><img class="item-picture" src="assets/images/accessories-pics/men-bag.png">
                     <p class="item-name"> Neckties →</p>
                 </div>
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/accessories-pics/belts.png">
-                    <p class="item-name">Belts →</p>
+                    <a href="index.php?page=accessories-menWatch"></a><img class="item-picture" src="assets/images/accessories-pics/men-watch.png">
+                    <p class="item-name"> Neckties →</p>
                 </div>
                 <div class="item-content">
-                    <img class="item-picture" src="assets/images/accessories-pics/headwear.png">
-                    <p class="item-name">Headwear →</p>
+                    <a href="index.php?page=accessories-womenBag"></a><img class="item-picture" src="assets/images/accessories-pics/women-bag.png">
+                    <p class="item-name"> Neckties →</p>
+                    <div class="item-content">
+                    <a href="index.php?page=accessories-womenWatch"></a><img class="item-picture" src="assets/images/accessories-pics/women-watch.png">
+                    <p class="item-name"> Neckties →</p>
                 </div>
+                </div>
+                
             </div>
       </div>
     
